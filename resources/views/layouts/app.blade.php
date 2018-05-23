@@ -13,14 +13,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/bulma.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-link" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                    <strong>MPr</strong>
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -31,9 +33,6 @@
             </div>
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="https://bulma.io/">
-                        Home
-                    </a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="/documentation/overview/start/">
                             Docs
@@ -58,46 +57,29 @@
                             <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
                                 Elements
                             </a>
-                            <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                            <a class="navbar-item" href="https://bulma.io/documentation/components/breadcrumb/">
                                 Components
                             </a>
                         </div>
                     </div>
                 </div>
+            </div>
         </nav>
+        <hello>
 
+        </hello>
         @yield('content')
-        </div>
+    </div>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-
-                // Get all "navbar-burger" elements
-                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-                // Check if there are any navbar burgers
-                if ($navbarBurgers.length > 0) {
-
-                    // Add a click event on each of them
-                    $navbarBurgers.forEach(function ($el) {
-                        $el.addEventListener('click', function () {
-
-                            // Get the target from the "data-target" attribute
-                            var target = $el.dataset.target;
-                            var $target = document.getElementById(target);
-
-                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                            $el.classList.toggle('is-active');
-                            $target.classList.toggle('is-active');
-
-                        });
-                    });
-                }
-
-            });
-        </script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/components.js') }}"></script>
+    <script>
+        $(".navbar-burger").click(function () {
+            $(this).toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        });
+    </script>
 </body>
 
 </html>

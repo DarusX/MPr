@@ -15,3 +15,5 @@ let mix = require('laravel-mix');
  */
    
 mix.sass('resources/assets/sass/bulma.scss', 'public/css');
+mix.js('resources/assets/js/components.js', 'public/js');
+mix.js('resources/assets/js/bootstrap.js', 'public/js');

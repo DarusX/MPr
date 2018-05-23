@@ -1,3 +1,5 @@
 {
-    "/css/bulma.css": "/css/bulma.css"
+    "/js/components.js": "/js/components.js",
+    "/css/bulma.css": "/css/bulma.css",
+    "/js/bootstrap.js": "/js/bootstrap.js"
 }
