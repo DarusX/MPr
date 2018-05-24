@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/users/json',function(){
+    return App\User::all();
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
